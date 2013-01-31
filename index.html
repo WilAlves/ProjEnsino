@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head><title>Entenda o que é</title></head>
+	<body onload="audioStart()">
+		<canvas id="canvas" width="400" height="400" style="background-color: #F8F8FF; border:1px solid black ; "></canvas>
+		<audio id="audio" loop="loop">
+			<source src="audio/intro.mp3" type="audio/mp3"></source>
+	<script type="text/javascript" src="./src/audio.js"></script>
+	<script>
+		var canvas = document.getElementById("canvas");
+		var audio = document.getElementById("audio");
+		audio.play();
+		var ctx = canvas.getContext("2d");
+			ctx.font = "30px";
+			ctx.fill(); 
+			ctx.fillStyle = "rgb(255,0,0)";
+			ctx.fillText("TESTE", 200,200);
+	</script>
+	</body>
+</html>
