@@ -1,0 +1,13 @@
+#button{
+	width: 75px;	/*Largura Botão */
+	height: 16px;	/*Altura Botão */
+	background-color: #00FF00;	/*Cor Background */
+	color: #FF0000;		/*Cor Letra */
+	font-weight: bold;	/*Letra negrita */
+	font-family: Arial;	/*estilo Letra */
+	position:absolute;	/*Em cima Canvas*/
+	top: 200px;	/* Posição em cima do canvas */
+	padding:10px;	/*a mais que a letra */
+	left: 183px;	/*a esquerda da POSIÇÃO */
+}
+
