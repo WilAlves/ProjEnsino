@@ -12,11 +12,44 @@
 			var audio = document.getElementById("audio");
 				audio.play();
 			var ctx = canvas.getContext("2d");
-			//	ctx.font = "30px";
-			//	ctx.fill(); 
-			//	ctx.fillStyle = "rgb(255,0,0)";
-			//	ctx.fillText("TESTE", 200,200);
+				ctx.font = 'Bold 30px Sans-Serif';
+				ctx.fill(); 
+				ctx.fillStyle = "red";
+				ctx.strokeText("MENU", 345, 100);
+				ctx.fillStyle = "red";
+				ctx.fillRect(0,20,50,50);
+				ctx.fillStyle = "blue";
+				ctx.fillRect(20,40,50,50);
+				ctx.fillStyle = "green";
+				ctx.fillRect(40,60,50,50);
+				ctx.fillStyle = "red";
+				ctx.fillRect(750,20,50,50);
+				ctx.fillStyle = "blue";
+				ctx.fillRect(730,40,50,50);
+				ctx.fillStyle = "green";
+				ctx.fillRect(710,60,50,50);
+				ctx.fillStyle = "red";
+				ctx.fillRect(0,530,50,50);
+				ctx.fillStyle = "blue";
+				ctx.fillRect(20,510,50,50);
+				ctx.fillStyle = "green";
+				ctx.fillRect(40,490,50,50);
+				ctx.fillStyle = "red";
+				ctx.fillRect(750,530,50,50);
+				ctx.fillStyle = "blue";
+				ctx.fillRect(730,510,50,50);
+				ctx.fillStyle = "green";
+				ctx.fillRect(710,490,50,50);
+
+				//Desenho de uma linha
+				ctx.strokeStyle = "red"; //define a cor da linha
+				ctx.beginPath(); //início do traçado da linha
+				ctx.moveTo(345, 105); //ponto inicial da linha
+				ctx.lineTo(434, 105); //ponto final da linha
+				ctx.closePath(); //fim do traçado
+				ctx.stroke(); //desenha efetivamente a linha
+				
 		</script>
-		<div id="button" onclick="document.location = 'game.html'">Start Play</div>
+		<div id="button" onclick="document.location = 'game.html'">Start Game</div>
 	</body>
 </html>
