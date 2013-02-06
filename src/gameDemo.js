@@ -1,7 +1,7 @@
 function initGame(){
 	initBox();
 	//initBat();
-	//initBricks();
+	initBricks();
 	//initBall();
 }
 
@@ -87,25 +87,21 @@ function initBricks() {
 	propertyList.density = 10.0;
 	propertyList.friction = 0.5;
 	propertyList.restitution = 0.2;
-	propertyList.width = 0.7;
-	propertyList.height = 0.5;
+	propertyList.width = 1.2;
+	propertyList.height = 1.2;
 	propertyList.type = "StaticBody";
-	propertyList.shape = "Box"
+	propertyList.shape = "Sphere"
 	var image = new Image();
 	//image.src = "image/banana.jpg";
 	propertyList.skin = image;
-	var x = 1, y = 1;
-		for (var i = 0; i < 3 ; i = i + 1)
-		{
-			for(var j = 0; j <= 9 ; j = j + 1)
-			{
-				propertyList.x = x;
-				propertyList.y = y;
-				propertyList.name = "Brick" + j + i;
-				createRigidBody(propertyList);
-				x = x + 2;
-			}
-		y = y + 0.9;
-	x = 1;
+	var x = 8, y = 15;
+
+	for(var j = 0; j < 2 ; j = j + 1)
+	{
+		propertyList.x = x;
+		propertyList.y = y;
+		propertyList.name = "Brick" + j;
+		createRigidBody(propertyList);
+		x = x + 10;
 	}
 }
