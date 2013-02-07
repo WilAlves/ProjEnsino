@@ -3,6 +3,7 @@ function initGame(){
 	//initBat();
 	initBricks();
 	//initBall();
+	initWords();
 }
 
 function initBox(){
@@ -65,7 +66,7 @@ function initBat(){
 	bat = createRigidBody(propertyList); 
 }
 function initBall(){
-	propertyList = new Object();
+	vpropertyList = new Object();
 	propertyList.density = 1.0;
 	propertyList.friction = 0.5;
 	propertyList.restitution = 0.1;
@@ -74,11 +75,14 @@ function initBall(){
 	propertyList.width = 1.5;
 	propertyList.height = 1.5;
 	propertyList.type = "DynamicBody";
-	propertyList.shape = "Sphere"
+	propertyList.shape = "Box"
 	var image = new Image();
 	//image.src = "image/ball.png";
 	propertyList.skin = image;
 	propertyList.name = "Ball";
+	pendullumball = createRigidBody(propertyList);
+	pendullumball = createRigidBody(propertyList);
+	pendullumball = createRigidBody(propertyList);
 	pendullumball = createRigidBody(propertyList);
 }
 
@@ -103,5 +107,34 @@ function initBricks() {
 		propertyList.name = "Brick" + j;
 		createRigidBody(propertyList);
 		x = x + 10;
+	}
+}
+
+function initWords() {
+	vpropertyList = new Object();
+	propertyList.density = 1.0;
+	propertyList.friction = 0.5;
+	propertyList.restitution = 0.1;
+	propertyList.width = 1.5;
+	propertyList.height = 0.5;
+	propertyList.type = "DynamicBody";
+	propertyList.shape = "Box"
+	var image = new Image();
+	//image.src = "image/ball.png";
+	propertyList.skin = image;
+	propertyList.name = "Ball";
+	var pos;
+	for ( var i = 0; i < 4; i++ ) {
+		pos = Math.random() * 25;
+		pos = Math.floor(pos+1);
+		pos = parseInt(pos);
+		console.log("x: "+pos);
+		propertyList.x = pos;
+		pos = Math.random() * 10;
+		pos = Math.floor(pos);
+		pos = parseInt(pos);
+		console.log("y: "+pos);
+		propertyList.y = pos;
+		pendullumball = createRigidBody(propertyList);
 	}
 }
