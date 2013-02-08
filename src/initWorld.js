@@ -32,7 +32,7 @@ function init() {
         debugDraw.SetFlags(b2DebugDraw.e_shapeBit | b2DebugDraw.e_jointBit);
         world.SetDebugDraw(debugDraw); 
  initGame();
- window.setInterval(update,1000/60); 
+ window.setInterval(update,9000/60); 
 }
 
 window.setInterval(removeObjScheduledForRemoval, 1000/90);

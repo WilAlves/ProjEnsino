@@ -1,6 +1,6 @@
 function initGame(){
 	initBox();
-	//initBat();
+//	initBat();
 	initBricks();
 	//initBall();
 	initWords();
@@ -10,7 +10,7 @@ function initBox(){
 	propertyList = new Object();
 
 	var image = new Image();
-	//image.src = "image/border.jpg";
+	image.src = "image/border.jpg";
 	propertyList.skin = image;
 
 	propertyList.density = 1.0;
@@ -60,7 +60,7 @@ function initBat(){
 	propertyList.type = "DynamicBody";
 	propertyList.shape = "Box"
 	var image = new Image();
-	//image.src = "image/monkey.jpg";
+	image.src = "image/monkey.jpg";
 	propertyList.skin = image;
 	propertyList.name = "Bat";
 	bat = createRigidBody(propertyList); 
@@ -77,7 +77,7 @@ function initBall(){
 	propertyList.type = "DynamicBody";
 	propertyList.shape = "Box"
 	var image = new Image();
-	//image.src = "image/ball.png";
+	image.src = "image/ball.png";
 	propertyList.skin = image;
 	propertyList.name = "Ball";
 	pendullumball = createRigidBody(propertyList);
@@ -96,7 +96,7 @@ function initBricks() {
 	propertyList.type = "StaticBody";
 	propertyList.shape = "Sphere"
 	var image = new Image();
-	//image.src = "image/banana.jpg";
+	image.src = "image/maca1.png";
 	propertyList.skin = image;
 	var x = 8, y = 15;
 
@@ -113,14 +113,14 @@ function initBricks() {
 function initWords() {
 	vpropertyList = new Object();
 	propertyList.density = 1.0;
-	propertyList.friction = 0.5;
-	propertyList.restitution = 0.1;
+	propertyList.friction = 1.0;
+	propertyList.restitution = 1.2;
 	propertyList.width = 1.5;
 	propertyList.height = 0.5;
 	propertyList.type = "DynamicBody";
 	propertyList.shape = "Box"
 	var image = new Image();
-	//image.src = "image/ball.png";
+	image.src = "image/maca.png";
 	propertyList.skin = image;
 	propertyList.name = "Ball";
 	var pos;

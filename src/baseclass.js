@@ -46,7 +46,7 @@ function updateSkin(b)
  context.rotate(b.GetAngle());
  width = b.GetUserData().width * SCALE;
  height = b.GetUserData().height * SCALE;
-// context.drawImage(b.GetUserData().skin, -width, -height, (width)*2, (height)*2);
+context.drawImage(b.GetUserData().skin, -width, -height, (width)*2, (height)*2);
  
  
     context.restore();
