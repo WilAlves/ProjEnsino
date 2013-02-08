@@ -112,6 +112,7 @@ function initBricks() {
 
 function initWords() {
 	vpropertyList = new Object();
+
 	propertyList.density = 1.0;
 	propertyList.friction = 1.0;
 	propertyList.restitution = 1.2;
@@ -119,12 +120,12 @@ function initWords() {
 	propertyList.height = 0.5;
 	propertyList.type = "DynamicBody";
 	propertyList.shape = "Box"
+	for ( var i = 0; i < 4; i++ ) {
 	var image = new Image();
-	image.src = "image/maca.png";
+	image.src = "image/"+i+".png";
 	propertyList.skin = image;
 	propertyList.name = "Ball";
 	var pos;
-	for ( var i = 0; i < 4; i++ ) {
 		pos = Math.random() * 25;
 		pos = Math.floor(pos+1);
 		pos = parseInt(pos);
