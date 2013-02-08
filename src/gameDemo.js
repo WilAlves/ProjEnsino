@@ -10,7 +10,7 @@ function initBox(){
 	propertyList = new Object();
 
 	var image = new Image();
-	image.src = "image/border.jpg";
+	image.src = "image/borda.jpg";
 	propertyList.skin = image;
 
 	propertyList.density = 1.0;
@@ -47,7 +47,7 @@ function initBox(){
 	lwall = createRigidBody(propertyList);
 }
 
-function initBat(){
+/*function initBat(){
 	//create Basket
 	propertyList = new Object();
 	propertyList.density = 10.0;
@@ -64,7 +64,7 @@ function initBat(){
 	propertyList.skin = image;
 	propertyList.name = "Bat";
 	bat = createRigidBody(propertyList); 
-}
+}*/
 function initBall(){
 	vpropertyList = new Object();
 	propertyList.density = 1.0;
@@ -77,7 +77,7 @@ function initBall(){
 	propertyList.type = "DynamicBody";
 	propertyList.shape = "Box"
 	var image = new Image();
-	image.src = "image/ball.png";
+	image.src = "image/nmaca.png";
 	propertyList.skin = image;
 	propertyList.name = "Ball";
 	pendullumball = createRigidBody(propertyList);
@@ -96,7 +96,7 @@ function initBricks() {
 	propertyList.type = "StaticBody";
 	propertyList.shape = "Sphere"
 	var image = new Image();
-	image.src = "image/maca1.png";
+	image.src = "image/maca.png";
 	propertyList.skin = image;
 	var x = 8, y = 15;
 
@@ -107,6 +107,7 @@ function initBricks() {
 		propertyList.name = "Brick" + j;
 		createRigidBody(propertyList);
 		x = x + 10;
+		//if ( (j % 2) == 1)image.src = "image/melancia.png";
 	}
 }
 

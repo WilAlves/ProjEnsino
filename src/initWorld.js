@@ -24,31 +24,29 @@ function init() {
 
  world = new b2World(new b2Vec2(0,10), true);
 
- var debugDraw = new b2DebugDraw();
+/* var debugDraw = new b2DebugDraw();
         debugDraw.SetSprite ( document.getElementById ("game").getContext ("2d"));
         debugDraw.SetDrawScale(SCALE);     //define scale
-        debugDraw.SetFillAlpha(0.3);    //define transparency
+        debugDraw.SetFillAlpha(0.0);    //define transparency
         debugDraw.SetLineThickness(1.0);
         debugDraw.SetFlags(b2DebugDraw.e_shapeBit | b2DebugDraw.e_jointBit);
-        world.SetDebugDraw(debugDraw); 
+        world.SetDebugDraw(debugDraw); */
  initGame();
  window.setInterval(update,1000/60); 
 }
 
 window.setInterval(removeObjScheduledForRemoval, 1000/90);
-document.body.addEventListener("keydown", keyset, false);
+document.body.addEventListener("keydown", pressHandler, false);
 
 var moveLeft, moveRight;
 
-function keyset(evt){
- //37: "left", 39: "right"
- if(evt.keyCode == 37){
-  moveLeft = 1;
-  moveRight = 0;
- }
- if(evt.keyCode == 39){
-  moveLeft = 0;
-  moveRight = 1;
+function pressHandler(evt){
+	var offset = { x: this.x - evt.stageX };
+	evt.onMouseMove = function( ev ) {
+	if ( ev.stageX < 480 )
+	if ( ev.stageX + offset.x <= 380 && ev.stageX + offset.x >= 5)
+		evt.target.x = ev.stageX + offset.x;
+console.log("eh"+evt);
  }   
 }
 
@@ -100,7 +98,7 @@ function update() {
    updateSkin(b);
   }
   if (b.GetType() == b2Body.b2_dynamicBody && b.GetUserData() != null) {     
-   if(b.GetUserData().name == "Bat"){
+   if(b.GetUserData().name == "Ball"){
     if(moveLeft){
      moveLeft = 0;  
      var ImpulseVec = new b2Vec2(-30,0);
